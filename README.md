@@ -8,7 +8,7 @@
 npm i -g create-react-app
 ```
 
-## Dependencies Old
+## Dependencies Old Setup
 
 
 ```bash
@@ -30,8 +30,6 @@ npm i --save-dev style-loader css-loader file-loader react-hot-loader \
   postcss-preset-env autoprefixer
 
 npm i react react-dom babel-plugin-transform-decorators-legacy axios bootstrap
-
-
 ```
 
 ```json
@@ -44,11 +42,11 @@ npm i react react-dom babel-plugin-transform-decorators-legacy axios bootstrap
 ```
 
 
-## Dependencis ReactJS 17.x Setup
+## Dependencies ReactJS 17.x Setup
 
 [Link Git](https://github.com/abhidatta0/react17-webpack-setup/blob/master/src/app.jsx)
 
-```html
+```bash
 npm i webpack webpack-cli webpack-dev-server --save-dev
 
 npm i @babel/core @babel/preset-env @babel/preset-react babel-loader \
@@ -66,6 +64,8 @@ npm i eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-node \
 
 npm i react react-dom bootstrap core-js@^3 jquery@1.9.1 popper.js@^1.16.1 
 
+npm i react react-dom
+
 npm i axios
 ```
 
@@ -73,3 +73,12 @@ npm i axios
 ## Utils
 
 [Faker JS](https://github.com/marak/Faker.js/)
+[Babel IO](https://babeljs.io)
+
+## React Component Lifecycle (Ordered)
+
+1. constructor
+2. render
+3. componentDidMount
+4. componentDidUpdate
+5. componentWillUnmount

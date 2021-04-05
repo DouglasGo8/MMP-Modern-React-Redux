@@ -1,14 +1,14 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-const mode = production;
+const mode = "development";
 
 module.exports = {
-  mode: mode;
+  mode: mode,
+  entry: "./src/index.js",
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$#/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
@@ -38,7 +38,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: {
-                localIdentName: "[path][name]__[local]--[hash:base64:5",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
               },
             },
           },
@@ -51,10 +51,20 @@ module.exports = {
     extensions: [".js", ".jsx", ".scss", ".json"],
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HTMLWebpackPlugin({
       template: "./public/index.html",
       filename: "./index.html",
     }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
   ],
   devtool: "inline-source-map",
+  devServer: {
+    historyApiFallback: true,
+  },
 };
