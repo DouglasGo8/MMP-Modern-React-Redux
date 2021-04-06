@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import "./app.css";
 import SeasonDisplay from "./containers/SeasonDisplay";
+import Spinner from "./components/Spinner";
 /**
  * @author dbatista
  */
@@ -36,9 +37,7 @@ class App extends Component {
     console.log("hit async willUnmount");
   }
 
-  render() {
-    console.log("hit render");
-
+  renderContent = () => {
     if (this.state.errMsg && !this.state.lat) {
       return (
         <div>
@@ -58,7 +57,13 @@ class App extends Component {
       );
     }
 
-    return <div>Loading...</div>;
+    return <Spinner message="Wait GeoLoc Permission" />;
+  };
+
+  render() {
+    // console.log("hit render");
+
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
