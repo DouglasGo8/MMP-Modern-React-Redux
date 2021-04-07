@@ -74,6 +74,8 @@ npm i axios
 
 [Faker JS](https://github.com/marak/Faker.js/)
 [Babel IO](https://babeljs.io)
+[List Free Apis](https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/)
+[Random Memes API](https://api.imgflip.com/get_memes)
 
 ## React Component Lifecycle (Ordered)
 

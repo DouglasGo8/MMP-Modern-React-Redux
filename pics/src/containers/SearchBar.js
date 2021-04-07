@@ -10,14 +10,13 @@ class SearchBar extends Component {
   /**
    * callback function over uncontrolled form
    */
-  onInputChange = async (evt) => {
+  /*onInputChange = async (evt) => {
     console.log(evt.target.value); // contains the value of control that hitted the event
-  };
-
+  };*/
 
   /**
    * Arrow function's can access {this} context, to avoding contexts issues
-   * @param {*} evt 
+   * @param {*} evt
    */
   onFormSubmit = async (evt) => {
     evt.preventDefault();
