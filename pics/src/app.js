@@ -1,15 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 
 import "./app.css";
 
-const app = () => {
-  return (
-    <div>
-      <hr />
-      Content
-      <hr />
-    </div>
-  );
-};
+import SearchBar from "./components/SearchBar";
 
-export default app;
+/**
+ * @author dbatista
+ */
+class App extends Component {
+
+  onSearchSubmit = async (term) => {
+    console.log(term);
+  }
+
+  render() {
+    return (
+      <div className="ui container">
+        <SearchBar onSubmit={this.onSearchSubmit} />
+      </div>
+    );
+  }
+}
+
+export default App;
