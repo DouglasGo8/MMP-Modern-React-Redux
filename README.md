@@ -88,7 +88,9 @@ npm i axios
 ## React Hooks composition
 
 * useState
+  > Function that lets you use **state** in a functional component ![Class Components vs Hooks](./assets/images/ClassComponent_vs_Hooks.png)
 * useEffect
+  > Function that lets you use *something* like **lifecycle methods** in a functional component
 * useContext
 * useReducer
 * useCallBack
