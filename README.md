@@ -36,7 +36,7 @@ npm i react react-dom babel-plugin-transform-decorators-legacy axios bootstrap
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config webpack.config.js",
-    "build": "npm run webpack",
+    "build": "npm run webpack",widgets
     "start": "webpack-dev-server --open"
   }
 ```
@@ -84,3 +84,16 @@ npm i axios
 3. componentDidMount
 4. componentDidUpdate
 5. componentWillUnmount
+
+## React Hooks composition
+
+* useState
+* useEffect
+* useContext
+* useReducer
+* useCallBack
+* useMemo
+* useRef
+* useImperativeHandle
+* useLayoutEffect
+* useDebugValue
