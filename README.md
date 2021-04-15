@@ -10,7 +10,6 @@ npm i -g create-react-app
 
 ## Dependencies Old Setup
 
-
 ```bash
 npm i --save-dev @babel/cli @babel/core @babel/plugin-proposal-class-properties \
   @babel/plugin-proposal-export-default-from @babel/plugin-transform-runtime \
@@ -41,7 +40,6 @@ npm i react react-dom babel-plugin-transform-decorators-legacy axios bootstrap
   }
 ```
 
-
 ## Dependencies ReactJS 17.x Setup
 
 [Link Git](https://github.com/abhidatta0/react17-webpack-setup/blob/master/src/app.jsx)
@@ -62,13 +60,12 @@ npm i eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-node \
   eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y \
   sass --save-dev
 
-npm i react react-dom bootstrap core-js@^3 jquery@1.9.1 popper.js@^1.16.1 
+npm i react react-dom bootstrap core-js@^3 jquery@1.9.1 popper.js@^1.16.1
 
 npm i react react-dom
 
 npm i axios
 ```
-
 
 ## Utils
 
@@ -87,15 +84,47 @@ npm i axios
 
 ## React Hooks composition
 
-* useState
+- useState
   > Function that lets you use **state** in a functional component ![Class Components vs Hooks](./assets/images/ClassComponent_vs_Hooks.png)
-* useEffect
-  > Function that lets you use *something* like **lifecycle methods** in a functional component
-* useContext
-* useReducer
-* useCallBack
-* useMemo
-* useRef
-* useImperativeHandle
-* useLayoutEffect
-* useDebugValue
+- useEffect
+  > Function that lets you use _something_ like **lifecycle methods** in a functional component
+- useContext
+- useReducer
+- useCallBack
+- useMemo
+- useRef
+- useImperativeHandle
+- useLayoutEffect
+- useDebugValue
+
+## React v17 capture:true
+
+```javascript
+useEffect(() => {
+  document.body.addEventListener(
+    "click",
+    () => {
+      setOpen(false);
+    },
+    { capture: true }
+  );
+}, []);
+```
+
+```javascript
+useEffect(() => {
+  const onBodyClick = (event) => {
+    if (ref.current.contains(event.target)) {
+      return;
+    }
+    setOpen(false);
+  };
+  document.body.addEventListener("click", onBodyClick, { capture: true });
+
+  return () => {
+    document.body.removeEventListener("click", onBodyClick, {
+      capture: true,
+    });
+  };
+}, []);
+```

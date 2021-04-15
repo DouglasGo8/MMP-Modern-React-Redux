@@ -6,7 +6,8 @@ import axios from "axios";
  */
 const search = () => {
   //
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState("programming");
+  const [debouncedTerm, setDebouncedTerm] = useState(term);
   const [results, setResults] = useState([]);
 
   /**
@@ -14,6 +15,7 @@ const search = () => {
    * ...nothing run at initial render -> run after re-render
    * [data] run at initial render, run after every re-render if data has changed since last render
    */
+  /*
   useEffect(() => {
     //console.log("Run Once");
     //console.log("Run after every render and at initial render");
@@ -51,6 +53,35 @@ const search = () => {
 
     // search();
   }, [term]);
+  */
+
+  useEffect(() => {
+    const timerOf = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timerOf);
+    };
+  }, [term]);
+
+  useEffect(() => {
+    const fSearch = async () => {
+      const { data } = await axios.get(`https://en.wikipedia.org/w/api.php`, {
+        params: {
+          action: "query",
+          list: "search",
+          origin: "*",
+          format: "json",
+          srsearch: debouncedTerm,
+        },
+      });
+      setResults(data.query.search);
+    };
+    //
+    fSearch();
+    //
+  }, [debouncedTerm]);
 
   const renderResults = results.map((result, _i) => {
     return (
