@@ -2,6 +2,7 @@ import React from "react";
 
 import "./App.css";
 
+import Search from "./components/Search";
 import Accordion from "./components/Accordion";
 
 const items = [
@@ -26,7 +27,7 @@ const items = [
 const app = () => {
   return (
     <div className="ui container">
-      <Accordion items={items} />
+     <Search/>
     </div>
   );
 };
