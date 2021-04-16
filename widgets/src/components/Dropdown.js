@@ -5,18 +5,18 @@ import React, { useEffect, useRef, useState } from "react";
  * @param {*} param0
  * @returns
  */
-const dropdown = ({ options, selected, onSelectChange }) => {
+const dropdown = ({ label, options, selected, onSelectChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(); // mandatory position
 
   /**
-   * cannot use async() annotation
+   * cannot use async() annotation, or ...Listeners will not works
    */
   useEffect(() => {
     const onBodyClick = (event) => {
-      // console.log("Click fired");
-      // console.log(ref.current);
-      // console.log(event.target);
+      //console.log("Click fired");
+      //console.log(ref.current);
+      //console.log(event.target);
       if (ref.current.contains(event.target)) {
         return;
       }
@@ -48,10 +48,10 @@ const dropdown = ({ options, selected, onSelectChange }) => {
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label">Select a Color</label>
+        <label className="label">{label}</label>
         <div
           onClick={() => setOpen(!open)}
-          className={`ui selection dropdown  ${open ? "visible active" : ""}`}
+          className={`ui selection dropdown ${open ? "visible active" : ""}`}
         >
           <i className="dropdown icon"></i>
           <div className="text">{selected.label}</div>

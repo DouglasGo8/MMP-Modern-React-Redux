@@ -5,6 +5,7 @@ import "./App.css";
 import Search from "./components/Search";
 import DropDown from "./components/Dropdown";
 import Accordion from "./components/Accordion";
+import Translate from "./components/Translate";
 
 /*const items = [
   {
@@ -21,7 +22,7 @@ import Accordion from "./components/Accordion";
   },
 ];*/
 
-const options = [
+/*const options = [
   {
     label: "The Color Red",
     value: "red",
@@ -35,28 +36,19 @@ const options = [
     label: "A Shade of Blue",
     value: "blue",
   },
-];
+];*/
 
 /**
  *
  * @returns
  */
 const app = () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  //const [selected, setSelected] = useState(options[0]);
+  //const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div className="ui container">
-      <button onClick={() => setShowDropdown(!showDropdown)}>
-        Toggle Dropdown
-      </button>
-      {showDropdown ? (
-        <DropDown
-          selected={selected}
-          onSelectChange={setSelected}
-          options={options}
-        />
-      ) : null}
+      <Translate />
     </div>
   );
 };
