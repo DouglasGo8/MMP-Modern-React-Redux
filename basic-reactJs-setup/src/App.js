@@ -1,15 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import "./App.css";
 
 const app = () => {
-  return (
-    <div>
-      <hr />
-      Content
-      <hr />
-    </div>
-  );
+  return <Fragment>Hi from React.js App</Fragment>;
 };
 
 export default app;

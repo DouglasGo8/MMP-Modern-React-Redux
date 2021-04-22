@@ -6,8 +6,10 @@ import Search from "./components/Search";
 import DropDown from "./components/Dropdown";
 import Accordion from "./components/Accordion";
 import Translate from "./components/Translate";
+import Route from "./containers/Route";
+import Header from "./containers/Header";
 
-/*const items = [
+const items = [
   {
     title: "What is React?",
     content: "What front-end Javascript framework",
@@ -20,9 +22,9 @@ import Translate from "./components/Translate";
     title: "How do you use React?",
     content: "You use React JS by creating components",
   },
-];*/
+];
 
-/*const options = [
+const options = [
   {
     label: "The Color Red",
     value: "red",
@@ -36,19 +38,35 @@ import Translate from "./components/Translate";
     label: "A Shade of Blue",
     value: "blue",
   },
-];*/
+];
 
 /**
  *
  * @returns
  */
 const app = () => {
-  //const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(options[0]);
   //const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div className="ui container">
-      <Translate />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <DropDown
+          options={options}
+          selected={selected}
+          onSelectChange={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
