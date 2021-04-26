@@ -218,3 +218,7 @@ console.log(store.getState());
 ## Redux lifecycle with Middleware Async Ops
 
 *![Mid/Redux](./snapshots/redux_lifecyle_with_middleware.png)
+
+## Rule of mutate
+
+*![Mutate](./snapshots/rule_of_mutate.png)

@@ -6,12 +6,12 @@ import { fetchPosts } from "../actions";
  *
  */
 class PostList extends Component {
-
   componentDidMount = async () => {
-    console.log(this.props.fetchPosts());
+    // console.log(this.props.fetchPosts());
     this.props.fetchPosts();
-  }
+  };
   render() {
+    // console.log(this.props.posts); // [] first loaded
     return (
       <div>
         <h1>Post List</h1>
@@ -19,8 +19,18 @@ class PostList extends Component {
     );
   }
 }
+/**
+ * 
+ * @param {*} state 
+ * @returns 
+ */
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts,
+  };
+};
 
 /**
  * binds the props to actions
  */
-export default connect(null, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPosts })(PostList);
