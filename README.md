@@ -228,3 +228,8 @@ console.log(store.getState());
 - BrowserRoute always after TLD
 - HashRouter always after "#"
 - MemoryRouter only root path e.g domain.com/
+
+
+## Console Google Dev
+
+[Google Devs](console.developers.google.com/)
