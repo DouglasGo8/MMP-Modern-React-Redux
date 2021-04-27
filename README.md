@@ -222,3 +222,9 @@ console.log(store.getState());
 ## Rule of mutate
 
 *![Mutate](./snapshots/rule_of_mutate.png)
+
+## Router React
+
+- BrowserRoute always after TLD
+- HashRouter always after "#"
+- MemoryRouter only root path e.g domain.com/
