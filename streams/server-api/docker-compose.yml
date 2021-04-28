@@ -1,0 +1,18 @@
+version: "3"
+services:
+  mongodb-burger:
+    restart: always
+    image: mongo
+    container_name: "db_streams"
+    environment:
+      - MONGO_INITDB_DATABASE=db_streams
+      - MONGO_INITDB_ROOT_USERNAME=guest
+      - MONGO_INITDB_ROOT_PASSWORD=welcome1
+    volumes:
+      - dbstream:/data/db/streams
+    ports:
+      - 27017:27017
+
+volumes:
+  dbstream:
+
