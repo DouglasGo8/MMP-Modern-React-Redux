@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -13,9 +12,7 @@ const store = createStore(reducers);
 
 render(
   <Provider store={store}>
-    <StrictMode>
-      <App />
-    </StrictMode>
+    <App />
   </Provider>,
   document.getElementById("root")
 );
