@@ -233,3 +233,15 @@ console.log(store.getState());
 ## Console Google Dev
 
 [Google Devs](console.developers.google.com/)
+
+## React v17 redux-form:
+
+```bash
+npm install redux-form --legacy-peer-deps
+```
+
+## Vert.x Stream Server API
+
+[Vert.x Core](https://vertx.io/get-started/)
+[Vert.x Web Core](https://vertx.io/docs/vertx-web/java/#_cors_handling)
+[Vert.x Github Mongo](https://github.com/vert-x3/vertx-examples/blob/4.x/mongo-examples/pom.xml)
