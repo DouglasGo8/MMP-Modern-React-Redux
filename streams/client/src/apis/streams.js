@@ -4,5 +4,8 @@ import axios from "axios";
  * @author dbatista
  */
 export default axios.create({
-  baseURL: "localhost:3666/streams"
-})
+  baseURL: "http://localhost:3666/streams",
+  headers: {
+    "Access-Control-Allow-Origin": true,
+  },
+});

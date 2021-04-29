@@ -33,7 +33,7 @@ class StreamCreate extends Component {
    */
   onSubmit = (formValues) => {
     this.props.createStream(formValues);
-  }
+  };
   /**
    *
    * @returns
@@ -55,6 +55,11 @@ class StreamCreate extends Component {
     );
   }
 }
+/**
+ *
+ * @param {*} formValues
+ * @returns
+ */
 const validate = (formValues) => {
   const errors = {};
 

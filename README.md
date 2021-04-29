@@ -229,7 +229,6 @@ console.log(store.getState());
 - HashRouter always after "#"
 - MemoryRouter only root path e.g domain.com/
 
-
 ## Console Google Dev
 
 [Google Devs](console.developers.google.com/)
@@ -243,5 +242,27 @@ npm install redux-form --legacy-peer-deps
 ## Vert.x Stream Server API
 
 [Vert.x Core](https://vertx.io/get-started/)
-[Vert.x Web Core](https://vertx.io/docs/vertx-web/java/#_cors_handling)
-[Vert.x Github Mongo](https://github.com/vert-x3/vertx-examples/blob/4.x/mongo-examples/pom.xml)
+[Vert.x Web Core](https://vertx.io/docs/vertx-web/java/)
+[Vert.x Github Mongo](https://github.com/vert-x3/vertx-examples/blob/4.x/mongo-examples)
+
+## MongoDB Insert Collection at Studio 3T
+
+```mongo
+
+db = db.getSiblingDB("local");
+db.getCollection("streams").find({});
+
+
+db.getCollection("streams").insertOne(
+  {
+      title: "Java Integration",
+      description: "Apache Camel"
+      
+  }
+);
+
+db.getCollection("streams").insertMany([
+
+]);
+
+```

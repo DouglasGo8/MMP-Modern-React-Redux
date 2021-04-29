@@ -1,5 +1,62 @@
-import React from "react";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { fetchStreams } from "../actions";
+import stream from "../reducers/stream";
 
-const streamList = () => <div>Stream List</div>;
+/**
+ * @author dbatista
+ */
+class StreamList extends Component {
+  componentDidMount = async () => {
+    //console.log(this.props)
+    this.props.fetchStreams();
+  };
 
-export default streamList;
+  renderAdmin = (stream) => {
+    if (stream.userId && stream.userId === this.props.currentUserId) {
+      return (
+        <div className="right floated content">
+          <button className="ui button primary">Edit</button>
+          <button className="ui button negative">Delete</button>
+        </div>
+      );
+    }
+  };
+
+  renderList = () => {
+    return this.props.streams.map((stream) => {
+      //console.log(stream._id);
+      return (
+        <div className="item" key={stream._id}>
+          {this.renderAdmin(stream)}
+          <i className="large middle aligned icon camera" />
+          <div className="content">
+            {stream.title}
+            <div className="description">{stream.description}</div>
+          </div>
+        </div>
+      );
+    });
+  };
+  render() {
+    //console.log(this.props.streams);
+    return (
+      <div>
+        <h2>Streams</h2>
+        <div className="ui celled list">{this.renderList()}</div>
+      </div>
+    );
+  }
+}
+/**
+ *
+ * @param {*} state
+ * @returns
+ */
+const mapStateToProps = (state) => {
+  return {
+    streams: Object.values(state.streams),
+    currentUserId: state.auth.userId,
+  };
+};
+export default connect(mapStateToProps, { fetchStreams })(StreamList);

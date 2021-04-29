@@ -10,7 +10,7 @@ class GoogleAuth extends Component {
       window.gapi.client
         .init({
           clientId:
-            "{{ClientID}}",
+            "{{CLIENT_ID}}",
           scope: "email",
         })
         .then(() => {
@@ -50,14 +50,14 @@ class GoogleAuth extends Component {
           Sign Out
         </button>
       );
+    } else {
+      return (
+        <button onClick={this.onSignInClick} className="ui red google button">
+          <i className="google icon" />
+          Sign In
+        </button>
+      );
     }
-
-    return (
-      <button onClick={this.onSignInClick} className="ui red google button">
-        <i className="google icon" />
-        Sign In
-      </button>
-    );
   };
 
   render() {
@@ -66,6 +66,7 @@ class GoogleAuth extends Component {
 }
 
 const mapStateToProps = (state) => {
+  //console.log(state);
   return {
     isSignedIn: state.auth.isSignedIn,
   };
