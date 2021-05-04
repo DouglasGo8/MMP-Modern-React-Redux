@@ -10,7 +10,7 @@ class GoogleAuth extends Component {
       window.gapi.client
         .init({
           clientId:
-            "{{CLIENT_ID}}",
+            "16024244334-rkbcjbb57n68j033pa6utefpn9c7216i.apps.googleusercontent.com",
           scope: "email",
         })
         .then(() => {
@@ -39,6 +39,7 @@ class GoogleAuth extends Component {
       this.props.signOut();
     }
   };
+  
 
   renderAuthButton = () => {
     if (this.props.isSignedIn == null) {

@@ -141,7 +141,7 @@ console.clear();
 // Action creator
 const createPolicy = (name, amount) => {
   // Action like action from(some message)...
-  return {  
+  return {
     type: "CREATE_POLICY", // classify with header (Action)..
     payload: { // body, message - payload
       name: name,
@@ -160,9 +160,9 @@ const deletePolicy = (name) => {
 };
 // Action creator
 const createClaim = (name, amountOfMoneyToCollect, currency) => {
-  return {  
+  return {
     type: "CREATE_CLAIM", //  (Action)..
-    payload: { 
+    payload: {
       name: name,
       amountOfMoneyToCollect: amountOfMoneyToCollect
     },
@@ -173,7 +173,7 @@ const claimHistory = (oldListOfClaims = [], action) => {
   if (action.type === 'CREATE_CLAIM') {
     return [...oldListOfClaims, action.payload]; // always return a new Object
   }
-  
+
   return oldListOfClaims;
 };
 //
@@ -183,7 +183,7 @@ const accounting = (bagOfMoney = 100, action) => {
   } else if(action.type === "CREATE_POLICY") {
     return bagOfMoney +  action.payload.amount;
   }
-  
+
   return bagOfMoney;
 };
 //
@@ -217,11 +217,11 @@ console.log(store.getState());
 
 ## Redux lifecycle with Middleware Async Ops
 
-*![Mid/Redux](./snapshots/redux_lifecyle_with_middleware.png)
+\*![Mid/Redux](./snapshots/redux_lifecyle_with_middleware.png)
 
 ## Rule of mutate
 
-*![Mutate](./snapshots/rule_of_mutate.png)
+\*![Mutate](./snapshots/rule_of_mutate.png)
 
 ## Router React
 
@@ -257,7 +257,7 @@ db.getCollection("streams").insertOne(
   {
       title: "Java Integration",
       description: "Apache Camel"
-      
+
   }
 );
 
@@ -265,4 +265,11 @@ db.getCollection("streams").insertMany([
 
 ]);
 
+```
+
+## History Object Deprecation Warning
+
+```javascript
+import { createBrowserHistory } from "history";
+export default createBrowserHistory();
 ```

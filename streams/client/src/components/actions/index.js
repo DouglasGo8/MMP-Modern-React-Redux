@@ -1,4 +1,5 @@
 import streamAPI from "../../apis/streams";
+import history from "../../history";
 
 import {
   SIGN_IN,
@@ -28,7 +29,6 @@ export const signOut = () => {
     type: SIGN_OUT,
   };
 };
-
 /**
  * Create a Record
  * @param {*} formValues
@@ -39,6 +39,7 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   const resp = await streamAPI.post("/create", { ...formValues, userId });
   // console.log(resp.data);
   dispatch({ type: CREATE_STREAM, payload: resp.data });
+  history.push("/");
 };
 
 /**
@@ -67,8 +68,13 @@ export const fetchStream = (id) => async (dispatch) => {
  * @returns
  */
 export const editStream = (id, formValues) => async (dispatch) => {
+
+  //console.log(formValues);
+
   const resp = await streamAPI.put(`/edit/${id}`, formValues);
+  
   dispatch({ type: EDIT_STREAM, payload: resp.data });
+  history.push("/");
 };
 
 /**
