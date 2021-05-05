@@ -35,7 +35,7 @@ class StreamList extends Component {
       // console.log(stream);
       if (stream.title) {
         return (
-          <div className="item" key={stream._id + "_" + Math.random()}>
+          <div className="item" key={stream._id}>
             {this.renderAdmin(stream)}
             <i className="large middle aligned icon camera"></i>
             <div className="content">

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import { Component } from "react";
 import { connect } from "react-redux";
 import { singIn, signOut } from "../../components/actions";
 /**
@@ -10,7 +10,7 @@ class GoogleAuth extends Component {
       window.gapi.client
         .init({
           clientId:
-            "{{API_HERE}}",
+            "16024244334-rkbcjbb57n68j033pa6utefpn9c7216i.apps.googleusercontent.com",
           scope: "email",
         })
         .then(() => {
@@ -39,7 +39,6 @@ class GoogleAuth extends Component {
       this.props.signOut();
     }
   };
-  
 
   renderAuthButton = () => {
     if (this.props.isSignedIn == null) {
@@ -62,7 +61,7 @@ class GoogleAuth extends Component {
   };
 
   render() {
-    return <Fragment>{this.renderAuthButton()}</Fragment>;
+    return <div>{this.renderAuthButton()}</div>;
   }
 }
 

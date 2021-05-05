@@ -29,6 +29,7 @@ export const signOut = () => {
     type: SIGN_OUT,
   };
 };
+
 /**
  * Create a Record
  * @param {*} formValues
