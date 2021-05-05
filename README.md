@@ -233,7 +233,7 @@ console.log(store.getState());
 
 [Google Devs](console.developers.google.com/)
 
-## React v17 redux-form:
+## React v17 redux-form
 
 ```bash
 npm install redux-form --legacy-peer-deps

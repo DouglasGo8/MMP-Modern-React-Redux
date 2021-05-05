@@ -69,11 +69,10 @@ export const fetchStream = (id) => async (dispatch) => {
  * @returns
  */
 export const editStream = (id, formValues) => async (dispatch) => {
-
   //console.log(formValues);
 
   const resp = await streamAPI.put(`/edit/${id}`, formValues);
-  
+
   dispatch({ type: EDIT_STREAM, payload: resp.data });
   history.push("/");
 };
@@ -86,4 +85,5 @@ export const editStream = (id, formValues) => async (dispatch) => {
 export const deleteStream = (id) => async (dispatch) => {
   await streamAPI.delete(`/delete/${id}`);
   dispatch({ type: DELETE_STREAM, payload: id });
+  history.push("/");
 };
