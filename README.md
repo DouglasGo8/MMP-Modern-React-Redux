@@ -273,3 +273,13 @@ db.getCollection("streams").insertMany([
 import { createBrowserHistory } from "history";
 export default createBrowserHistory();
 ```
+
+## RMTP Server
+
+```javascript
+const NodeMediaServer = require('node-media-server');
+```
+
+## OBS Studio
+
+[Obs Project](https://obsproject.com/welcome)
