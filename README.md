@@ -277,9 +277,22 @@ export default createBrowserHistory();
 ## RMTP Server
 
 ```javascript
-const NodeMediaServer = require('node-media-server');
+const NodeMediaServer = require("node-media-server");
 ```
 
 ## OBS Studio
 
 [Obs Project](https://obsproject.com/welcome)
+
+## Redux vs Context
+
+- Redux
+
+1. Excellent Documentation
+2. Well-kown design patterns
+3. Tremendous amount of source libs
+
+- Context
+
+1. No need an extra lib
+2. Hard to build a 'store' component with cross cutting concerns

@@ -1,6 +1,31 @@
-import { createContext } from "react";
+import { Component, createContext } from "react";
 
 /**
  * @default english
  */
-export default createContext('english');
+const Context = createContext("english");
+
+/**
+ *
+ */
+export class LanguageStore extends Component {
+  state = {
+    language: "english",
+  };
+
+  onLanguageChange = (language) => {
+    this.setState({ language });
+  };
+
+  render() {
+    return (
+      <Context.Provider
+        value={{ ...this.state, onLanguageChange: this.onLanguageChange }}
+      >
+        {this.props.children}
+      </Context.Provider>
+    );
+  }
+}
+
+export default Context;

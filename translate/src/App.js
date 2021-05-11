@@ -4,40 +4,22 @@ import "./App.css";
 
 import UserCreate from "./components/UserCreate";
 import ColorContext from "./contexts/ColorContext";
-import LanguageContext from "./contexts/LanguageContext";
+import { LanguageStore } from "./contexts/LanguageContext";
+import LanguageSelector from "./components/LanguageSelector";
 
 /**
  *
  */
 class App extends Component {
-  state = {
-    language: "english",
-  };
-
-  onLanguageChange = async (language) => {
-    // console.log(language);
-    this.setState({ language });
-  };
-
   render() {
     return (
       <div className="ui container">
-        <div>
-          Select a language:&nbsp;
-          <i
-            className="flag us"
-            onClick={() => this.onLanguageChange("english")}
-          />
-          <i
-            className="flag nl"
-            onClick={() => this.onLanguageChange("dutch")}
-          />
-        </div>
-        <LanguageContext.Provider value={this.state.language}>
+        <LanguageStore>
+          <LanguageSelector />
           <ColorContext.Provider value="red">
             <UserCreate />
           </ColorContext.Provider>
-        </LanguageContext.Provider>
+        </LanguageStore>
       </div>
     );
   }
