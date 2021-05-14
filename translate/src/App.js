@@ -13,6 +13,7 @@ import LanguageSelector from "./components/LanguageSelector";
 class App extends Component {
   render() {
     return (
+      
       <div className="ui container">
         <LanguageStore>
           <LanguageSelector />
